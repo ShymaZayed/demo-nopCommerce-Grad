@@ -5,8 +5,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pages.P01_register;
 import org.openqa.selenium.By;
+import org.openqa.selenium.devtools.v85.dom.model.RGBA;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class D01_registerStepDef
 {
@@ -26,13 +28,13 @@ public class D01_registerStepDef
     @And("enter Firstname")
     public void enterFirstname()
     {
-        register.firstname().sendKeys("dummy1");
+        register.firstname().sendKeys("automation");
     }
 
     @And("enter Lastname")
     public void EnterLastname()
     {
-        register.lastname().sendKeys("dummy2");
+        register.lastname().sendKeys("tester");
     }
 
     @And("choose Day")
@@ -56,19 +58,19 @@ public class D01_registerStepDef
     @And("enter Email")
     public void enterEmail()
     {
-        register.email().sendKeys("dummy@mail.com");
+        register.email().sendKeys("test4@example.com");
     }
 
     @And("enter password")
     public void enterPassword()
     {
-        register.password().sendKeys("test@222");
+        register.password().sendKeys("P@ssw0rd");
     }
 
     @And("enter confirm password")
     public void confirmPassword()
     {
-        register.rePassword().sendKeys("test@222");
+        register.rePassword().sendKeys("P@ssw0rd");
     }
 
     @And("click register")
@@ -80,7 +82,9 @@ public class D01_registerStepDef
     @Then("verify that Your registration completed")
     public void registerVerification()
     {
-        Assert.assertTrue(register.verification().getText().contains("Your registration completed"));
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(register.verification().getText().contains("Your registration completed"));
+        softAssert.assertTrue(register.verification().getCssValue("color").equals("76, 177, 124, 1"));
     }
 
 
