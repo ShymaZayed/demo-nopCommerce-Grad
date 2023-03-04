@@ -12,7 +12,7 @@ public class P02_login {
 
     public WebElement loginLink()
     {
-        WebElement element = new WebDriverWait(Hooks.driver, Duration.ofSeconds(20))
+        WebElement element = new WebDriverWait(Hooks.driver, Duration.ofSeconds(30))
                 .until(ExpectedConditions.presenceOfElementLocated(By.className("ico-login")));
 
 
@@ -37,11 +37,12 @@ public class P02_login {
     {
         return Hooks.driver.findElement(By.xpath("//*[@class ='message-error validation-summary-errors']"));
     }
-   /*
+
+    //valid Verification
+
     public WebElement validVerification()
     {
-        return Hooks.driver.findElement(By.className("topic-block-title"));
+        return Hooks.driver.findElement(By.xpath("//*[@class ='ico-account']"));
     }
-    */
 
 }

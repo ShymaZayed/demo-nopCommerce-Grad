@@ -28,13 +28,13 @@ public class D01_registerStepDef
     @And("enter Firstname")
     public void enterFirstname()
     {
-        register.firstname().sendKeys("automation");
+        register.firstname().sendKeys("automation2");
     }
 
     @And("enter Lastname")
     public void EnterLastname()
     {
-        register.lastname().sendKeys("tester");
+        register.lastname().sendKeys("tester2");
     }
 
     @And("choose Day")
@@ -58,7 +58,7 @@ public class D01_registerStepDef
     @And("enter Email")
     public void enterEmail()
     {
-        register.email().sendKeys("test4@example.com");
+        register.email().sendKeys("test.mail2@example.com");
     }
 
     @And("enter password")

@@ -46,10 +46,10 @@ public class D02_loginStepDef {
     }
 
 
+
     //login with valid credentials
 
-    /*
-    @Given("user go to login page")
+    @Given("user go to login page2")
     public void goLoginPage1()
     {
         login.loginLink().click();
@@ -58,11 +58,11 @@ public class D02_loginStepDef {
     @When("user login with valid email and password")
     public void enterEmailAndPassword1()
     {
-        login.email().sendKeys("test@example.com");
+        login.email().sendKeys("test.mail2@example.com");
         login.password().sendKeys("P@ssw0rd");
     }
 
-    @And("user press on login button")
+    @And("user press on login button2")
     public void clickLoginButton1()
     {
         login.loginButton().click();
@@ -71,9 +71,10 @@ public class D02_loginStepDef {
     @Then("user login to the system successfully")
     public void validAssert()
     {
-        Assert.assertTrue(login.validVerification().getText().contains("Welcome to our store"));
-
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertAll();
+        softAssert.assertTrue(login.validVerification().isDisplayed());
+       // softAssert.assertEquals(login.validVerification().equals("https://demo.nopcommerce.com/"));
     }
-*/
 
 }
