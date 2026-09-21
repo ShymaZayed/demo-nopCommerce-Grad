@@ -16,13 +16,15 @@ design pattern, covering Register and Login functionality, with TestNG as the te
 - Maven
 
 ## Project Structure
-├── src
-│   ├── main/resources/features   # Gherkin .feature files (F01_Register, F02_Login)
-│   └── test/java/org.example
-│       ├── pages       # Page Object classes (P01_register, P02_login)
-│       ├── stepDefs    # Step definitions (D01_registerStepDef, D02_loginStepDef, Hooks)
-│       └── testRunner  # runners.java (TestNG Cucumber runner class)
-└── pom.xml             # Maven dependencies and reporting plugins
+```
+src
+├── main/resources/features   # Gherkin .feature files (F01_Register, F02_Login)
+└── test/java/org.example
+    ├── pages       # Page Object classes (P01_register, P02_login)
+    ├── stepDefs    # Step definitions (D01_registerStepDef, D02_loginStepDef, Hooks)
+    └── testRunner  # runners.java (TestNG Cucumber runner class)
+pom.xml              # Maven dependencies and reporting plugins
+```
 
 ## Test Scenarios Covered
 - User registration with valid input (@smoke)
